@@ -44,7 +44,7 @@ module.exports = {
           state: 'New York',
           country: 'United States of America',
           lat: 40.731248590866386,
-          lng: --74.00093357187976,
+          lng: -74.00093357187976,
           name: 'The Cage',
         },
 
@@ -183,6 +183,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
+    return queryInterface.bulkDelete('Spots', null, {});
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
