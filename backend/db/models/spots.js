@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     price: DataTypes.DECIMAL
   }, {});
-  Spot.associate = function(models) {
+  Spots.associate = function(models) {
     // associations can be defined here
   };
-  return Spot;
+  return Spots;
 };

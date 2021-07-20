@@ -1,0 +1,67 @@
+.background4 {
+    height: 100vh;
+    background-image: url(KobenGigiMural.jpeg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+.spotSlider {
+    border: 10px magenta solid;
+    position: fixed;
+    margin: 50px;
+    padding: 30px;
+    top: 350px;
+    bottom: 150px;
+    height: 175px;
+    width: 1250px
+}
+
+.spotSliderImg {
+    border: 5px limegreen solid;
+    position: fixed;
+    margin: 25px;
+    padding: 25px;
+    top: 420px;
+    bottom: 100px;
+    left: 8.5%;
+    height: 100px;
+    width: 200px;
+}
+
+.spotSliderReview {
+    border: 3px lightseagreen solid;
+    position: fixed;
+    margin: 10px;
+    padding: 10px;
+    top: 520px;
+    bottom: 50px;
+    height: 30px;
+    width: 155px;
+}
+
+.sliderBtnLeft {
+    border: 5px red solid;
+    position: fixed;
+    margin: 1px 1px;
+    padding: 3px;
+    top: 500px;
+    bottom: 60px;
+    left:6.5%;
+    height: 30px;
+    width: 15px;
+}
+
+.sliderBtnRight {
+    border: 5px red solid;
+    position: fixed;
+    margin: 1px 1px;
+    padding: 3px;
+    top: 500px;
+    bottom: 60px;
+    right:6.5%;
+    height: 30px;
+    width: 15px;
+}

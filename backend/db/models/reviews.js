@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     spotId: DataTypes.INTEGER,
     review: DataTypes.STRING
   }, {});
-  Review.associate = function(models) {
+  Reviews.associate = function(models) {
     // associations can be defined here
   };
-  return Review;
+  return Reviews;
 };

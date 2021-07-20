@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
     startDate: DataTypes.DATEONLY,
     endDate: DataTypes.DATEONLY
   }, {});
-  Booking.associate = function(models) {
+  Bookings.associate = function(models) {
     // associations can be defined here
   };
-  return Booking;
+  return Bookings;
 };

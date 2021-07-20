@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     spotId: DataTypes.INTEGER,
     url: DataTypes.STRING
   }, {});
-  Image.associate = function(models) {
+  Images.associate = function(models) {
     // associations can be defined here
   };
-  return Image;
+  return Images;
 };
