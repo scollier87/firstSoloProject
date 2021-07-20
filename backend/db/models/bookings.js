@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
     endDate: DataTypes.DATEONLY
   }, {});
   Bookings.associate = function(models) {
-    // associations can be defined here
+    Bookings.hasMany(model.Spots, { foreignKey: 'spotId'});
+    Bookings.belongsTo(model.Users, { foreignKey: 'userId'})
   };
   return Bookings;
 };

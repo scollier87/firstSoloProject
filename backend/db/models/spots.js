@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DECIMAL
   }, {});
   Spots.associate = function(models) {
-    // associations can be defined here
+    Spots.belongTo(models.Users, { foreignKey: 'userId'});
+    Spots.hasMany(models.Images, { foreignKey: 'spotId'})
   };
   return Spots;
 };
