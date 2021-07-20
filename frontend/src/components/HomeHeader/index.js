@@ -5,7 +5,8 @@ function Homeheader() {
         <div className="homeHeader">
             <div className="profilePic"></div>
             <div className="searchBar"></div>
-            <h1>Header</h1>
+            <div className="logOut"></div>
+            <div className="myBookings"></div>
         </div>
     )
 }

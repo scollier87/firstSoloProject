@@ -22,13 +22,37 @@
 }
 
 .searchBar {
-    border: 3px black solid;
+    border: 3px rgb(11, 3, 83) solid;
     position: fixed;
     margin: 25px;
-    padding: 20px;
-    top: 38px;
+    padding: 10px;
+    top: 50px;
     bottom: 25px;
-    left: 100px;
+    left: 145px;
     height: 25px;
-    width: 12px;
+    width: 140px;
+}
+
+.myBookings {
+    border: 3px rgb(11, 3, 83) solid;
+    position: fixed;
+    margin: 25px;
+    padding: 10px;
+    top: 50px;
+    bottom: 25px;
+    right: 75px;
+    height: 25px;
+    width: 70px;
+}
+
+.logOut {
+    border: 3px rgb(185, 28, 159) solid;
+    position: fixed;
+    margin: 25px;
+    padding: 10px;
+    top: 50px;
+    bottom: 25px;
+    right: 180px;
+    height: 25px;
+    width: 70px;
 }
