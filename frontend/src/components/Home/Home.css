@@ -65,3 +65,7 @@
     height: 30px;
     width: 15px;
 }
+
+.homeButton {
+    border: 3px blueviolet solid;
+}
