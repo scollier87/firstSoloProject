@@ -4,11 +4,13 @@ module.exports = (sequelize, DataTypes) => {
     spotId: DataTypes.INTEGER,
     userId: DataTypes.INTEGER,
     startDate: DataTypes.DATEONLY,
-    endDate: DataTypes.DATEONLY
+    endDate: DataTypes.DATEONLY,
+    gameSize: DataTypes.STRING
+
   }, {});
   Bookings.associate = function(models) {
-    Bookings.hasMany(model.Spots, { foreignKey: 'spotId'});
-    Bookings.belongsTo(model.Users, { foreignKey: 'userId'})
+    Bookings.belongsTo(models.Spot, { foreignKey: 'spotId' });
+    Bookings.belongsTo(models.User, { foreignKey: 'userId' })
   };
   return Bookings;
 };

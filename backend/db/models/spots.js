@@ -9,11 +9,12 @@ module.exports = (sequelize, DataTypes) => {
     lat: DataTypes.DECIMAL,
     lng: DataTypes.DECIMAL,
     name: DataTypes.STRING,
-    price: DataTypes.DECIMAL
   }, {});
   Spots.associate = function(models) {
-    Spots.belongTo(models.Users, { foreignKey: 'userId'});
-    Spots.hasMany(models.Images, { foreignKey: 'spotId'})
+    Spots.belongsTo(models.User, { foreignKey: 'userId'});
+    Spots.hasMany(models.Image, { foreignKey: 'spotId'});
+    Spots.hasMany(models.Booking, { foreignKey: 'spotId'});
+    Spots.hasMany(models.Review, { foreignKey: 'spotId'});
   };
   return Spots;
 };
