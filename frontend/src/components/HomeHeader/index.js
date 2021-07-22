@@ -7,7 +7,7 @@ function Homeheader() {
             <div className="profilePic"></div>
             <div className="searchBar"></div>
             <div className="logOut"></div>
-            <NavLink className="myBookings" to='/bookings'>Booking</NavLink>
+            <NavLink className="myBookings" to='/bookings'>My Bookings</NavLink>
         </div>
     )
 }

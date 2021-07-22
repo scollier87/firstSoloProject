@@ -9,6 +9,7 @@ import LandingPage from "./components/LandingPage";
 import Home from "./components/Home";
 import Homeheader from "./components/HomeHeader";
 import Bookings from "./components/Bookings";
+// import Spots from "./components/Spots";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,9 +34,12 @@ function App() {
               <Home/>
               <Homeheader/>
             </Route>
-            <Route path="/bookings">
+            <Route path="/spots/:id">
               <Bookings/>
             </Route>
+            {/* <Route path="/spots/:id">
+              <Spots/>
+            </Route> */}
           </Switch>
       )}
       </div>

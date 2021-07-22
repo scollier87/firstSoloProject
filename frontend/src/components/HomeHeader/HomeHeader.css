@@ -34,7 +34,8 @@
 }
 
 .myBookings {
-    border: 3px rgb(11, 3, 83) solid;
+    border: 3px white solid;
+    color: white;
     position: fixed;
     margin: 25px;
     padding: 10px;
