@@ -1,0 +1,11 @@
+.courtName {
+    border: black solid;
+    top: 25px;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+

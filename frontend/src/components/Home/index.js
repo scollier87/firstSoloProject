@@ -21,17 +21,14 @@ function Home() {
         <ProfileButton user={sessionUser} />
       );
 
-    useEffect(() => {
-        dispatch(getSpots());
-    }, [dispatch]);
 
     useEffect(() => {
         dispatch(getImages());
     }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(getOneSpot());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(getOneSpot());
+    // }, [dispatch]);
     return (
         <div className="background4">
             <NavLink className="homeButton" exact to='/'>Home</NavLink>
@@ -39,19 +36,12 @@ function Home() {
             <div className="spotSlider">
                 {images.map((image) =>
                     <div>
-                    <img src={image.url} className="spotSliderImg"></img>
-                        <NavLink className="spotInfo" exact to={`/spots/${image.spotId}`}>spotInfo</NavLink>
-
+                        <NavLink className="spotInfo" exact to={`/spots/${image.spotId}`}>
+                        <img src={image.url} className="spotSliderImg"></img>
+                        </NavLink>
                     </div>
                 )}
-                    {/* {spots.map((spot) => <h5>{spot.name}</h5>)} */}
             </div>
-            {/* {spots.map((spot) =>
-            <div className="spotSlider">
-            </div>
-            )} */}
-                {/* <div className="sliderBtnLeft"></div>
-                <div className="sliderBtnRight"></div> */}
 
         </div>
     )
