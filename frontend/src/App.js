@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
 import Home from "./components/Home";
 import Homeheader from "./components/HomeHeader";
+import Bookings from "./components/Bookings";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +32,9 @@ function App() {
             <Route path="/home">
               <Home/>
               <Homeheader/>
+            </Route>
+            <Route path="/bookings">
+              <Bookings/>
             </Route>
           </Switch>
       )}

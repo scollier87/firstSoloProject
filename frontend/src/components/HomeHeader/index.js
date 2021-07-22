@@ -1,4 +1,5 @@
 import './HomeHeader.css'
+import {NavLink} from 'react-router-dom'
 
 function Homeheader() {
     return(
@@ -6,7 +7,7 @@ function Homeheader() {
             <div className="profilePic"></div>
             <div className="searchBar"></div>
             <div className="logOut"></div>
-            <div className="myBookings"></div>
+            <NavLink className="myBookings" to='/bookings'>Booking</NavLink>
         </div>
     )
 }

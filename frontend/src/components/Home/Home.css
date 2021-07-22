@@ -48,29 +48,6 @@
     width: 155px;
 }
 
-.sliderBtnLeft {
-    border: 5px red solid;
-    position: fixed;
-    margin: 1px 1px;
-    padding: 3px;
-    top: 500px;
-    bottom: 60px;
-    left:6.5%;
-    height: 30px;
-    width: 15px;
-}
-
-.sliderBtnRight {
-    border: 5px red solid;
-    position: fixed;
-    margin: 1px 1px;
-    padding: 3px;
-    top: 500px;
-    bottom: 60px;
-    right:6.5%;
-    height: 30px;
-    width: 15px;
-}
 
 .homeButton {
     border: 3px blueviolet solid;

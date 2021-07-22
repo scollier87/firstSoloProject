@@ -5,11 +5,13 @@ import sessionReducer from './session';
 
 import spotsReducer from './spots';
 import imagesReducer from './images';
+import bookingsReducer from './bookings';
 
 export const rootReducer = combineReducers({
   session: sessionReducer,
   spots: spotsReducer,
   images: imagesReducer,
+  bookings: bookingsReducer,
 
 });
 

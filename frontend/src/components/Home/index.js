@@ -29,25 +29,19 @@ function Home() {
         <div className="background4">
             <NavLink className="homeButton" exact to='/'>Home</NavLink>
             <div className="profileDropdown">{sessionLinks}</div>
-
             <div className="spotSlider">
                 {images.map((image) =>
                     <img src={image.url} className="spotSliderImg"></img>
 
                 )}
-                {spots.map((spot) =>
-                    <h5>{spot.name}</h5>
-                )}
+                    {spots.map((spot) => <h5>{spot.name}</h5>)}
             </div>
-
             {/* {spots.map((spot) =>
             <div className="spotSlider">
-
             </div>
             )} */}
                 {/* <div className="sliderBtnLeft"></div>
                 <div className="sliderBtnRight"></div> */}
-                    <div className="spotSliderReview"></div>
         </div>
 
     )

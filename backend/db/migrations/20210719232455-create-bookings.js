@@ -19,12 +19,14 @@ module.exports = {
         references: { model: 'Users' }
       },
       startDate: {
-        type: Sequelize.DATEONLY,
-        allowNull: false
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.fn('now')
       },
       endDate: {
-        type: Sequelize.DATEONLY,
+        type: Sequelize.DATE,
         allowNull: false,
+        defaultValue: Sequelize.fn('now')
       },
       gameSize: {
         type: Sequelize.STRING,
