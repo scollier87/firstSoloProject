@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { createSpot } from '../../store/spots'
+import { NavLink } from 'react-router-dom'
 // import e from 'express'
 
 function AddNewSpotForm(){
@@ -49,30 +50,31 @@ function AddNewSpotForm(){
 
     return (
         <div>
+            {/* <NavLink className="homeButton" exact to='/home'>My Page</NavLink> */}
             <form onSubmit={handleSubmit}>
                 <label>user</label>
-                <input value={userId}onChange={updateUserId}></input>
+                <input value={userId} onChange={updateUserId}></input>
 
                 <label>address</label>
-                <input value={address}onChange={updateAddress}></input>
+                <input value={address} onChange={updateAddress}></input>
 
                 <label>city</label>
-                <input value={city}onChange={updateCity}></input>
+                <input value={city} onChange={updateCity}></input>
 
                 <label>state</label>
-                <input value={state}onChange={updateState}></input>
+                <input value={state} onChange={updateState}></input>
 
                 <label>country</label>
-                <input value={country}onChange={updateCountry}></input>
+                <input value={country} onChange={updateCountry}></input>
 
                 <label>lat</label>
-                <input value={lat}onChange={updateLat}></input>
+                <input value={lat} onChange={updateLat}></input>
 
                 <label>lng</label>
-                <input value={lng}onChange={updateLng}></input>
+                <input value={lng} onChange={updateLng}></input>
 
                 <label>name</label>
-                <input value={name}onChange={updateName}></input>
+                <input value={name} onChange={updateName}></input>
 
                 <button type="submit">add spot</button>
             </form>

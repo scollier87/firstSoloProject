@@ -46,6 +46,19 @@
     width: 70px;
 }
 
+.addSpot {
+    border: 3px white solid;
+    color: white;
+    position: fixed;
+    margin: 25px;
+    padding: 10px;
+    top: 50px;
+    bottom: 25px;
+    right: 75px;
+    height: 25px;
+    width: 70px;
+}
+
 .logOut {
     border: 3px rgb(185, 28, 159) solid;
     position: fixed;

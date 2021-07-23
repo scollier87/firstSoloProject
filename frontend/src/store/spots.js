@@ -32,8 +32,8 @@ export const getOneSpot = (id) => async (dispatch) => {
     dispatch(oneSpot(spot))
 }
 
-export const createSpot = data => async dispatch => {
-    const response = await csrfFetch(`/api/spot`, {
+export const createSpot = data => async (dispatch) => {
+    const response = await csrfFetch(`/api/spots`, {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
