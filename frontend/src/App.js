@@ -10,6 +10,7 @@ import Home from "./components/Home";
 import Homeheader from "./components/HomeHeader";
 import Bookings from "./components/Bookings";
 // import Spots from "./components/Spots";
+import AddNewSpotForm from "./components/AddNewSpotForm"
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +41,9 @@ function App() {
             {/* <Route path="/spots/:id">
               <Spots/>
             </Route> */}
+            <Route path='/new'>
+              <AddNewSpotForm/>
+            </Route>
           </Switch>
       )}
       </div>

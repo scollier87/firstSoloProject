@@ -1,5 +1,8 @@
+import { csrfFetch } from "./csrf"
 const SET_SPOTS = 'spots/setSpots'
 const ONE_SPOT  = 'spots/getOneSpot'
+const CREATE_SPOT = 'spots/createOneSpot'
+
 
 
 const setSpots = (spots) => ({
@@ -9,6 +12,11 @@ const setSpots = (spots) => ({
 
 const oneSpot = (spot) => ({
     type: ONE_SPOT,
+    spot,
+})
+
+const createOneSpot = (spot) => ({
+    type: CREATE_SPOT,
     spot,
 })
 
@@ -24,6 +32,22 @@ export const getOneSpot = (id) => async (dispatch) => {
     dispatch(oneSpot(spot))
 }
 
+export const createSpot = data => async dispatch => {
+    const response = await csrfFetch(`/api/spot`, {
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+    });
+
+    if(response.ok) {
+        const spot = await response.json();
+        dispatch(createOneSpot(spot));
+        return spot;
+    }
+}
+
 const initialState = {};
 
 const spotsReducer = ( state = initialState, action) => {
@@ -31,6 +55,14 @@ const spotsReducer = ( state = initialState, action) => {
         case SET_SPOTS:
             return { ...state, ...Object.fromEntries(action.spots.map((spot) =>[
                 spot.id, spot])) };
+        case CREATE_SPOT:
+            if (!state[action.spot.id]){
+                const newState = {
+                    ...state,
+                    [action.spot.id]: action.spot,
+                };
+                return newState;
+            }
             default:
             return state;
     }

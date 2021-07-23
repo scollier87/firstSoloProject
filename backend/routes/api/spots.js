@@ -14,8 +14,8 @@ router.get('/:id', asyncHandler(async (req, res) => {
     return res.json(spot);
 }));
 // //create a spot
-// router.spot('', validateCreate, asyncHandler(async(req, res) => {
-//     const spot = await Spot.create(req.body);
-//     res.json(spot);
-// }))
+router.post('/', asyncHandler(async(req, res) => {
+    const spot = await Spot.create(req.body);
+    res.json(spot);
+}));
 module.exports = router;

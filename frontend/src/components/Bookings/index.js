@@ -5,6 +5,7 @@ import { getSpots } from '../../store/spots'
 import { getBookings } from '../../store/bookings'
 import { NavLink } from "react-router-dom";
 import { useParams } from 'react-router';
+import { createSpot } from '../../store/spots'
 
 function Bookings() {
     const dispatch = useDispatch();
@@ -12,7 +13,7 @@ function Bookings() {
     const spots = useSelector((state) => Object.values(state.spots));
     const { id } = useParams() //method using a .find comparing the two ids useParams id ===
     // console.log("spots", spots)
-
+    
     const individualSpot = spots.find((spot) => {
         return +id === spot.id
         // return spot.name === "Venice Beach Basketball Courts"
