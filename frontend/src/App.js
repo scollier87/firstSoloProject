@@ -11,6 +11,7 @@ import Homeheader from "./components/HomeHeader";
 import Bookings from "./components/Bookings";
 // import Spots from "./components/Spots";
 import AddNewSpotForm from "./components/AddNewSpotForm"
+import EditSpot from "./components/EditSpot"
 
 function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,9 @@ function App() {
             </Route> */}
             <Route path='/new'>
               <AddNewSpotForm/>
+            </Route>
+            <Route path='/edit'>
+              <EditSpot/>
             </Route>
           </Switch>
       )}

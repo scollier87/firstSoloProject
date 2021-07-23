@@ -18,4 +18,13 @@ router.post('/', asyncHandler(async(req, res) => {
     const spot = await Spot.create(req.body);
     res.json(spot);
 }));
+//update
+router.put('/:id', asyncHandler(async function(req, res) {
+    const spotId = parseInt(req.params.id);
+    const singleSpot = await Spot.findByPk(spotId)
+    const updatedSpot = await singleSpot.update(req.body)
+
+    return res.json(updatedSpot);
+})
+)
 module.exports = router;
