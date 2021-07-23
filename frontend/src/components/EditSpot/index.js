@@ -2,12 +2,16 @@ import './EditSpot.css'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { createSpot, updateSpot } from '../../store/spots'
+import { createSpot, updateSpot, removeSpot } from '../../store/spots'
 import { NavLink } from 'react-router-dom'
+import { useParams } from 'react-router'
 
 function EditSpot(){
+    // const spot = useSelector(state => state.spots[spotId]);
+
     const dispatch = useDispatch();
     const history = useHistory();
+    const { id } = useParams()
 
     const [userId, setUserId] = useState('');
     const [address, setAddress] = useState('');
@@ -31,7 +35,8 @@ function EditSpot(){
         e.preventDefault();
 
         const payload = {
-            userId,
+            id,
+            userId: +userId,
             address,
             city,
             state,
@@ -46,6 +51,12 @@ function EditSpot(){
             history.push(`./spots/${spot.id}`);
         }
     }
+
+
+
+    // useEffect(() => {
+    //     dispatch(removeSpot());
+    // }, [dispatch]);
 
     return (
         <div>

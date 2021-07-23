@@ -45,7 +45,7 @@ function App() {
             <Route path='/new'>
               <AddNewSpotForm/>
             </Route>
-            <Route path='/edit'>
+            <Route path='/edit/:id'>
               <EditSpot/>
             </Route>
           </Switch>

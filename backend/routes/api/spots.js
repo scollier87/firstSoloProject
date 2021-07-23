@@ -27,4 +27,10 @@ router.put('/:id', asyncHandler(async function(req, res) {
     return res.json(updatedSpot);
 })
 )
+//delete
+router.delete('/:id', asyncHandler(async(req, res) => {
+    const spotId = parseInt(req.params.id)
+    const spot = await Spot.destroy({where: {id: spotId}});
+    return res.json(spot)
+}))
 module.exports = router;
