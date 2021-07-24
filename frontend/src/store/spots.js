@@ -78,15 +78,11 @@ export const updateSpot = data => async (dispatch) => {
 export const removeSpot = data => async (dispatch) => {
     const response = await csrfFetch(`/api/spots/${data.id}`, {
         method: 'delete',
-        headers: {
-            'Content-Type': 'applicatin/json',
-        },
-        body: JSON.stringify(data)
     })
     if(response.ok) {
-        const spotId = await res.json();
-        dispatch(removeOneSpot(spotId))
+        dispatch(removeOneSpot(dataId))
     }
+    return response;
 }
 
 const initialState = {};

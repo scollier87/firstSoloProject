@@ -52,11 +52,9 @@ function EditSpot(){
         }
     }
 
-
-
-    // useEffect(() => {
-    //     dispatch(removeSpot());
-    // }, [dispatch]);
+    const handleDelete = () => {
+        dispatch(removeSpot(spot.id))
+    }
 
     return (
         <div>
@@ -87,6 +85,7 @@ function EditSpot(){
                 <input value={name} onChange={updateName}></input>
 
                 <button type="submit">update spot</button>
+                <button onClick={handleDelete}>delete spot</button>
             </form>
         </div>
     )
