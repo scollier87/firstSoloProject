@@ -1,5 +1,5 @@
 .courtName {
-    border: black solid;
+    /* border: black solid; */
     top: 25px;
     bottom: 25px;
     left: 25px;
@@ -9,7 +9,7 @@
 }
 
 .courtCity {
-    border: black solid;
+    /* border: black solid; */
     top: 25px;
     bottom: 25px;
     left: 25px;
@@ -18,8 +18,17 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+.bookingsImageBackground {
+    border: 3px black solid;
+    height: 50px;
+    width: 50px;
+    /* background-size: 100% 100%; */
+}
+
 .bookingsBackground {
-    height: 75vh;
+    height: 300px;
+    width: 700px;
+    /* height: 75vh; */
     /* background-repeat: no-repeat;
     background-size: 100% 100%;
     top: 0;
@@ -31,8 +40,15 @@
     position: fixed; */
 }
 
+.bookingsBorder {
+border: 3px black solid;
+position: fixed;
+top: 325px;
+left: 250px;
+}
+
 .courtState {
-    border: black solid;
+    /* border: black solid; */
     top: 25px;
     bottom: 25px;
     left: 25px;
@@ -42,7 +58,7 @@
 }
 
 .courtAddress {
-    border: black solid;
+    /* border: black solid; */
     top: 25px;
     bottom: 25px;
     left: 25px;
@@ -52,7 +68,7 @@
 }
 
 .courtCountry {
-    border: black solid;
+    /* border: black solid; */
     top: 25px;
     bottom: 25px;
     left: 25px;

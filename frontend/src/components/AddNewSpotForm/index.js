@@ -49,34 +49,34 @@ function AddNewSpotForm(){
     }
 
     return (
-        <div>
-            <NavLink className="homeButton" exact to='/home'>My Page</NavLink>
-            <form onSubmit={handleSubmit}>
-                <label>user</label>
-                <input value={userId} onChange={updateUserId}></input>
+        <div className="addFormBackground">
+            <NavLink className="homeAddFormButton" exact to='/home'>My Page</NavLink>
+            <form onSubmit={handleSubmit} className="addNewSpotForm">
+                <label className="addFormLabel">User</label>
+                <input value={userId} onChange={updateUserId} className="addFormInput"></input>
 
-                <label>address</label>
-                <input value={address} onChange={updateAddress}></input>
+                <label className="addFormLabel">Address</label>
+                <input value={address} onChange={updateAddress} className="addFormInput"></input>
 
-                <label>city</label>
-                <input value={city} onChange={updateCity}></input>
+                <label className="addFormLabel">City</label>
+                <input value={city} onChange={updateCity} className="addFormInput"></input>
 
-                <label>state</label>
-                <input value={state} onChange={updateState}></input>
+                <label className="addFormLabel">State</label>
+                <input value={state} onChange={updateState} className="addFormInput"></input>
 
-                <label>country</label>
-                <input value={country} onChange={updateCountry}></input>
+                <label className="addFormLabel">Country</label>
+                <input value={country} onChange={updateCountry} className="addFormInput"></input>
 
-                <label>lat</label>
-                <input value={lat} onChange={updateLat}></input>
+                <label className="addFormLabel">Latitude</label>
+                <input value={lat} onChange={updateLat} className="addFormInput"></input>
 
-                <label>lng</label>
-                <input value={lng} onChange={updateLng}></input>
+                <label className="addFormLabel">Longitude</label>
+                <input value={lng} onChange={updateLng} className="addFormInput"></input>
 
-                <label>name</label>
-                <input value={name} onChange={updateName}></input>
+                <label className="addFormLabel">Name of Court</label>
+                <input value={name} onChange={updateName} className="addFormInput"></input>
 
-                <button type="submit">add spot</button>
+                <button type="submit" className="addFormButton">Add Court</button>
             </form>
         </div>
     )

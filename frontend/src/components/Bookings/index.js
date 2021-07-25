@@ -41,9 +41,11 @@ function Bookings() {
 
     return (
         <div>
-            <img src={oneImage?.url}  alt={oneImage?.id} className="bookingsBackground"/>
+            <div className="bookingsImageBackground">
+                <img src={oneImage?.url}  alt={oneImage?.id} className="bookingsBackground"/>
+            </div>
                 <NavLink className="homeButton" exact to='/home'>Home</NavLink>
-                <div>
+                <div className="bookingsBorder">
                     <div className="courtName">{individualSpot?.name}</div>
                     <div className="courtAddress">{individualSpot?.address}</div>
                     <div className="courtCity">{individualSpot?.city}</div>

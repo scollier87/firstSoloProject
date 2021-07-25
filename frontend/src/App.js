@@ -12,6 +12,7 @@ import Bookings from "./components/Bookings";
 // import Spots from "./components/Spots";
 import AddNewSpotForm from "./components/AddNewSpotForm"
 import EditSpot from "./components/EditSpot"
+import ProfileButton from "./components/Navigation/ProfileButton";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,7 @@ function App() {
             <Route path="/home">
               <Home/>
               <Homeheader/>
+              <ProfileButton/>
             </Route>
             <Route path="/spots/:id">
               <Bookings/>
