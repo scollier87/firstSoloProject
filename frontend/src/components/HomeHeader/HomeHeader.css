@@ -59,8 +59,9 @@
     width: 70px;
 }
 
-.logOut {
+.createNewSpot {
     border: 3px rgb(185, 28, 159) solid;
+    color: white;
     position: fixed;
     margin: 25px;
     padding: 10px;

@@ -1,0 +1,12 @@
+.homeButton{
+    border: 3px rgb(185, 28, 159) solid;
+    color: black;
+    position: fixed;
+    margin: 25px;
+    padding: 10px;
+    top: 50px;
+    bottom: 25px;
+    right: 180px;
+    height: 25px;
+    width: 70px;
+}

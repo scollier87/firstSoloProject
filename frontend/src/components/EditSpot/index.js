@@ -58,7 +58,7 @@ function EditSpot(){
 
     return (
         <div>
-            {/* <NavLink className="homeButton" exact to='/home'>My Page</NavLink> */}
+            <NavLink className="homeButton" exact to='/home'>My Page</NavLink>
             <form onSubmit={handleSubmit}>
                 <label>user</label>
                 <input value={userId} onChange={updateUserId}></input>
