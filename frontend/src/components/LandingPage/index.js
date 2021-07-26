@@ -12,7 +12,7 @@ function LandingPage() {
                 <NavLink className="signUp" to="/signup">Sign Up</NavLink>
             {/* </div>
             <div> */}
-                <NavLink className="homeBttn" exact to="/">Home</NavLink>
+                {/* <NavLink className="homeBttn" exact to="/">Home</NavLink> */}
             {/* </div> */}
 
 

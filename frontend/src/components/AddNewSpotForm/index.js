@@ -44,7 +44,7 @@ function AddNewSpotForm(){
 
     const spot = await dispatch(createSpot(payload))
         if(spot) {
-            history.push(`./spots/${spot.id}`);
+            history.push(`/spots/${spot.id}`);
         }
     }
 

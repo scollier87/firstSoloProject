@@ -20,19 +20,33 @@ function Home() {
     //     <ProfileButton user={sessionUser} />
     //   );
 
+    // console.log(spots)
 
     useEffect(() => {
         dispatch(getImages());
         dispatch(getSpots());
     }, [dispatch]);
 
+    const filteredSpots = spots.filter(spot => spot.userId === sessionUser.id);
+
+    console.log(filteredSpots)
+
     // useEffect(() => {
     //     dispatch(getOneSpot());
     // }, [dispatch]);
     return (
         <div className="background4">
-            <div className="myCreatedCourts">My Courts</div>
-            <div className="myBookings1">My Bookings</div>
+            <div className="myCreatedCourts">My Courts
+                <div>
+                    {filteredSpots.map((spot) =>
+                        <div>
+                            <li>{spot.name}</li>
+                            <a href={`/edit/${spot.id}`}>Edit</a>
+                        </div>
+                    )}
+                </div>
+        </div>
+            {/* <div className="myBookings1">My Bookings</div> */}
             <NavLink className="homeButton" exact to='/'>Home</NavLink>
             {/* <div className="profileDropdown">{sessionLinks}</div> */}
             <div className="spotSlider">

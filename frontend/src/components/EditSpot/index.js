@@ -57,35 +57,39 @@ function EditSpot(){
     }
 
     return (
-        <div>
-            <NavLink className="homeButton" exact to='/home'>My Page</NavLink>
+        <div className="updateMySpot">
+            <NavLink className="homeFormButton" exact to='/home'>Home</NavLink>
             <form onSubmit={handleSubmit}>
-                <label>user</label>
-                <input value={userId} onChange={updateUserId}></input>
+                <div className="updateForms">
+                    <label className="updateFormLabel">User</label>
+                    <input value={userId} onChange={updateUserId} className="updateFormInput"></input>
 
-                <label>address</label>
-                <input value={address} onChange={updateAddress}></input>
+                    <label className="updateFormLabel">Address</label>
+                    <input value={address} onChange={updateAddress} className="updateFormInput"></input>
 
-                <label>city</label>
-                <input value={city} onChange={updateCity}></input>
+                    <label className="updateFormLabel">City</label>
+                    <input value={city} onChange={updateCity} className="updateFormInput"></input>
 
-                <label>state</label>
-                <input value={state} onChange={updateState}></input>
+                    <label className="updateFormLabel">State</label>
+                    <input value={state} onChange={updateState} className="updateFormInput"></input>
 
-                <label>country</label>
-                <input value={country} onChange={updateCountry}></input>
+                    <label className="updateFormLabel">Country</label>
+                    <input value={country} onChange={updateCountry} className="updateFormInput"></input>
 
-                <label>lat</label>
-                <input value={lat} onChange={updateLat}></input>
+                    <label className="updateFormLabel">Lat</label>
+                    <input value={lat} onChange={updateLat} className="updateFormInput"></input>
 
-                <label>lng</label>
-                <input value={lng} onChange={updateLng}></input>
+                    <label className="updateFormLabel">Lng</label>
+                    <input value={lng} onChange={updateLng} className="updateFormInput"></input>
 
-                <label>name</label>
-                <input value={name} onChange={updateName}></input>
+                    <label className="updateFormLabel">Name</label>
+                    <input value={name} onChange={updateName} className="updateFormInput"></input>
 
-                <button type="submit">update spot</button>
-                <button onClick={handleDelete}>delete spot</button>
+                    <button type="submit">
+                        <a href='/home'>Update</a>
+                    </button>
+                    <button onClick={handleDelete}>Delete</button>
+                </div>
             </form>
         </div>
     )
