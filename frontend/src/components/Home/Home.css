@@ -64,3 +64,27 @@
     height: 25px;
     width: 70px;
 }
+
+.myCreatedCourts {
+    border: 5px royalblue solid;
+    color:white;
+    font: bold;
+    position: fixed;
+    top: 200px;
+    bottom: 300px;
+    left: 125px;
+    width: 200px;
+    text-align: center;
+
+}
+
+.myBookings1 {
+    border: 5px royalblue solid;
+    color:white;
+    position: fixed;
+    top: 200px;
+    bottom: 300px;
+    left: 750px;
+    width: 200px;
+    text-align: center;
+}

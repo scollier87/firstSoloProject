@@ -44,7 +44,7 @@ function Bookings() {
             <div className="bookingsImageBackground">
                 <img src={oneImage?.url}  alt={oneImage?.id} className="bookingsBackground"/>
             </div>
-                <NavLink className="homeButton" exact to='/home'>Home</NavLink>
+                <NavLink className="homeBookingsButton" exact to='/home'>Home</NavLink>
                 <div className="bookingsBorder">
                     <div className="courtName">{individualSpot?.name}</div>
                     <div className="courtAddress">{individualSpot?.address}</div>
@@ -54,17 +54,23 @@ function Bookings() {
 
                     {/* <img className="bookingBa"></img> */}
                 </div>
-                <form action=" " method="get" className="form">
-                    <label for="name">Enter your name:</label>
-                    <input type = "text" name="name" id="name" required></input>
-                    <label for="meeting-time">Time you want to play:</label>
-                    <input type="datetime-local" id="meeting-time"
-                        name="meeting-time" value="2022-06-12T19:30"
-                        min="2018-06-07T00:00" max="2022-06-14T00:00"></input>
-                    <label for="game size">How many people are coming?</label>
-                    <input type="text" name="name" id="name" required></input>
-                </form>
-                <input type="submit" value="Game On!"></input>
+                <div className="bookingFormBox">
+                    <form action=" " method="get" className="form">
+
+                        <label for="name" className="bookingFormLabel">Enter your name:</label>
+                        <input type = "text" name="name" id="name" required className="bookingFormInput"></input>
+
+                        <label for="meeting-time" className="bookingFormLabel">Time you want to play:</label>
+                        <input type="datetime-local" id="meeting-time"
+                            name="meeting-time" value="2022-06-12T19:30"
+                            min="2018-06-07T00:00" max="2022-06-14T00:00" className="bookingFormInput"></input>
+
+                        <label for="game size" className="bookingFormLabel">How many people are coming?</label>
+                        <input type="text" name="name" id="name" required className="bookingFormInput"></input>
+
+                    </form>
+                    <input type="submit" value="Game On!" className="bookingFormInputButton"></input>
+                </div>
         </div>
     )
 }

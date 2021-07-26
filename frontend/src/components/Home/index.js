@@ -23,6 +23,7 @@ function Home() {
 
     useEffect(() => {
         dispatch(getImages());
+        dispatch(getSpots());
     }, [dispatch]);
 
     // useEffect(() => {
@@ -30,6 +31,8 @@ function Home() {
     // }, [dispatch]);
     return (
         <div className="background4">
+            <div className="myCreatedCourts">My Courts</div>
+            <div className="myBookings1">My Bookings</div>
             <NavLink className="homeButton" exact to='/'>Home</NavLink>
             {/* <div className="profileDropdown">{sessionLinks}</div> */}
             <div className="spotSlider">

@@ -1,11 +1,24 @@
-.courtName {
-    /* border: black solid; */
-    top: 25px;
-    bottom: 25px;
-    left: 25px;
-    right: 25px;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.homeBookingsButton {
+    text-decoration: none;
+    color: black;
+    position: fixed;
+    margin: 10px;
+    padding: 10px;
+    top: 0px;
+    right: 5px;
+    height: 25px;
+    width: 70px;
+}
+
+.form{
+    margin-left: 280px;
+    position: relative;
+}
+
+.bookingFormInputButton{
+    margin-left: 365px;
+    position: relative;
+    margin-top: 10px;
 }
 
 .courtCity {
@@ -18,16 +31,21 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.bookingsImageBackground {
+/* .bookingsImageBackground {
     border: 3px black solid;
-    height: 50px;
-    width: 50px;
-    /* background-size: 100% 100%; */
-}
+    top: 100px;
+    height: 100px;
+    width: 100px;
+    right: 10%;
+    background-size: 100% 100%;
+} */
 
 .bookingsBackground {
     height: 300px;
-    width: 700px;
+    width: 600px;
+    top: 200px;
+    position: center;
+    left: 50px;
     /* height: 75vh; */
     /* background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -42,11 +60,20 @@
 
 .bookingsBorder {
 border: 3px black solid;
-position: fixed;
-top: 325px;
-left: 250px;
+position: absolute;
+top: 350px;
+left: 575px;
 }
 
+.courtName {
+     /* border: black solid; */
+     top: 25px;
+     bottom: 25px;
+     left: 25px;
+     right: 25px;
+     text-align: center;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 .courtState {
     /* border: black solid; */
     top: 25px;
@@ -75,4 +102,26 @@ left: 250px;
     right: 25px;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.bookingFormBox {
+    position: fixed;
+    top: 320px;
+    bottom: 300px;
+}
+
+.bookingFormLabel{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10px;
+    /* left: 400px; */
+}
+
+.bookingFormInput {
+    width: 100%;
+    padding: 4px 8px;
+    display: inline-block;
+    box-sizing: border-box;
+    /* left: 400px; */
 }

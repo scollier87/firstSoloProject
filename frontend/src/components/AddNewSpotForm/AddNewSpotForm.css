@@ -6,8 +6,8 @@
     margin: 25px;
     padding: 10px;
     top: 10px;
-    right: 45px;
-    height: 25px;
+    right: 35px;
+    height: 35px;
     width: 70px;
 }
 
@@ -51,4 +51,12 @@
     bottom: 0px;
     right: 0px;
     left: 0px;
+}
+
+.bookingsBackground {
+    background-size: 100% 100%;
+    position: fixed;
+    top: 25px;
+    bottom: 0px;
+    left: 280px;
 }

@@ -22,15 +22,16 @@
 }
 
 .searchBar {
-    border: 3px rgb(11, 3, 83) solid;
+    /* border: 3px rgb(11, 3, 83) solid; */
     position: fixed;
-    margin: 25px;
-    padding: 10px;
-    top: 50px;
+    /* margin: 25px; */
+    /* padding: 10px; */
+    top: 40px;
     bottom: 25px;
-    left: 145px;
-    height: 25px;
+    /* left: 145px; */
+    /* height: 25px; */
     width: 140px;
+    display: block;
 }
 
 .myBookings {
@@ -66,7 +67,7 @@
 
 .createNewSpot {
     /* border: 3px rgb(185, 28, 159) solid; */
-    border-radius: 30%;
+    border-radius: 25%;
     background-color: black;
     text-decoration: none;
     color: white;
