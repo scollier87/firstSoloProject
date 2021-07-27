@@ -29,7 +29,7 @@ function Home() {
 
     const filteredSpots = spots.filter(spot => spot.userId === sessionUser.id);
 
-    console.log(filteredSpots)
+    // console.log(filteredSpots)
 
     // useEffect(() => {
     //     dispatch(getOneSpot());
