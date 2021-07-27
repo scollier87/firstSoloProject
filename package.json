@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/scollier87/firstSoloProject/issues"
   },
-  "homepage": "https://github.com/scollier87/firstSoloProject#readme"
+  "homepage": "https://github.com/scollier87/firstSoloProject#readme",
+  "engines":{
+    "node": "14.15.4"
+  }
 }
