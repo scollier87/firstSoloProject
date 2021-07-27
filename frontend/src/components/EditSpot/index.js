@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom'
 import { createSpot, updateSpot, removeSpot } from '../../store/spots'
 import { NavLink } from 'react-router-dom'
 import { useParams } from 'react-router'
+import { getSpots } from '../../store/spots'
 
 function EditSpot(){
     // const spot = useSelector(state => state.spots[spotId]);
@@ -12,6 +13,8 @@ function EditSpot(){
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams()
+    const spots = useSelector((state) => Object.values(state.spots))
+    const sessionUser = useSelector(state => state.session.user);
 
     const [userId, setUserId] = useState('');
     const [address, setAddress] = useState('');
@@ -56,6 +59,12 @@ function EditSpot(){
         dispatch(removeSpot(spot.id))
     }
 
+    useEffect(() => {
+        dispatch(getSpots())
+    }, [dispatch])
+
+    const filteredSpots = spots.filter(spot => spot.userId === sessionUser.id);
+    console.log(filteredSpots)
     return (
         <div className="updateMySpot">
             <NavLink className="homeFormButton" exact to='/home'>Home</NavLink>
@@ -85,13 +94,28 @@ function EditSpot(){
                     <label className="updateFormLabel">Name</label>
                     <input value={name} onChange={updateName} className="updateFormInput"></input>
 
-                    <button type="submit">
-                        <a href='/home'>Update</a>
+                    <button type="submit"> Update
+                        {/* <a href='/home'>Update</a> */}
                     </button>
+                    {/* {sessionUser?.id === spot?.userId &&} */}
                     <button onClick={handleDelete}>Delete</button>
+
                 </div>
             </form>
+            {/* {filteredSpots.map((spot) =>
+                <div className="editSpotsCurrent">
+                    <li>{spot.address}</li>
+                    <li>{spot.city}</li>
+                    <li>{spot.state}</li>
+                    <li>{spot.country}</li>
+                    <li>{spot.lat}</li>
+                    <li>{spot.lng}</li>
+                    <li>{spot.name}</li>
+                </div> */}
+            )
+
         </div>
+
     )
 }
 

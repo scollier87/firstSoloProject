@@ -34,3 +34,7 @@
     right: 0px;
     left: 0px;
 }
+
+.editSpotsCurrent {
+    border: 3px magenta solid;
+}
