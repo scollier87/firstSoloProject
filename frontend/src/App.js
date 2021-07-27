@@ -6,6 +6,13 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
+import Home from "./components/Home";
+import Homeheader from "./components/HomeHeader";
+import Bookings from "./components/Bookings";
+// import Spots from "./components/Spots";
+import AddNewSpotForm from "./components/AddNewSpotForm"
+import EditSpot from "./components/EditSpot"
+import ProfileButton from "./components/Navigation/ProfileButton";
 
 function App() {
   const dispatch = useDispatch();
@@ -16,17 +23,36 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
-        <Switch>
-          <Route path="/signup">
-            <SignupFormPage />
-          </Route>
-          <Route path="/" exact >
-            <LandingPage/>
-          </Route>
-        </Switch>
+      {/* <Navigation isLoaded={isLoaded} /> */}
+      <div>
+        {isLoaded && (
+          <Switch>
+            <Route path="/signup" >
+              <SignupFormPage />
+            </Route>
+            <Route path="/" exact >
+              <LandingPage/>
+            </Route>
+            <Route path="/home">
+              <Home/>
+              <Homeheader/>
+              <ProfileButton/>
+            </Route>
+            <Route path="/spots/:id">
+              <Bookings/>
+            </Route>
+            {/* <Route path="/spots/:id">
+              <Spots/>
+            </Route> */}
+            <Route path='/new'>
+              <AddNewSpotForm/>
+            </Route>
+            <Route path='/edit/:id'>
+              <EditSpot/>
+            </Route>
+          </Switch>
       )}
+      </div>
     </>
   );
 }

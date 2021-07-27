@@ -1,10 +1,12 @@
 // frontend/src/components/LoginFormModal/LoginForm.js
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom"
 
 function LoginForm() {
   const dispatch = useDispatch();
+  const sessionUser = useSelector(state => state.session.user)
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -20,8 +22,12 @@ function LoginForm() {
     );
   };
 
+  if(sessionUser) return (
+    <Redirect to='/home'/>
+  )
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="formCSS" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>

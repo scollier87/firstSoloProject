@@ -1,0 +1,36 @@
+.updateFormLabel {
+    font: white;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.updateFormInput {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.updateForms {
+    font: white;
+    background-color: white;
+    /* border: 3px magenta solid; */
+    width: 20vh;
+}
+
+.homeFormButton {
+    border: 2px black solid;
+}
+
+.updateMySpot {
+    background-image: url(blueLine.jpeg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
