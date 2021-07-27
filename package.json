@@ -1,5 +1,5 @@
 {
-  "name": "authenticate-me",
+  "name": "couchbasketball",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,8 +22,5 @@
   "bugs": {
     "url": "https://github.com/scollier87/firstSoloProject/issues"
   },
-  "homepage": "https://github.com/scollier87/firstSoloProject#readme",
-  "engines":{
-    "node": "14.15.4"
-  }
+  "homepage": "https://github.com/scollier87/firstSoloProject#readme"
 }
