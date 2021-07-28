@@ -8,7 +8,7 @@ import { useParams } from 'react-router'
 import { getSpots } from '../../store/spots'
 
 function EditSpot(){
-    const spot = useSelector(state => state.spots[spotId]);
+    const spot = useSelector(state => state.spots[spot.id]);
 
     const dispatch = useDispatch();
     const history = useHistory();
