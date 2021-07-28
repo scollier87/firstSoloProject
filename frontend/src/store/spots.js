@@ -80,7 +80,7 @@ export const removeSpot = data => async (dispatch) => {
         method: 'delete',
     })
     if(response.ok) {
-        dispatch(removeOneSpot(dataId))
+        dispatch(removeOneSpot(data.id))
     }
     return response;
 }

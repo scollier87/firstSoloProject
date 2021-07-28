@@ -8,7 +8,7 @@ import { useParams } from 'react-router'
 import { getSpots } from '../../store/spots'
 
 function EditSpot(){
-    // const spot = useSelector(state => state.spots[spotId]);
+    const spot = useSelector(state => state.spots[spotId]);
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -49,8 +49,8 @@ function EditSpot(){
             name,
         }
 
-    const spot = await dispatch(updateSpot(payload))
-        if(spot) {
+    const spotUpdate = await dispatch(updateSpot(payload))
+        if(spotUpdate) {
             history.push(`./spots/${spot.id}`);
         }
     }
