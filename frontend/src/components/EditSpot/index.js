@@ -8,12 +8,13 @@ import { useParams } from 'react-router'
 import { getSpots } from '../../store/spots'
 
 function EditSpot(){
-    const spot = useSelector(state => state.spots[spot.id]);
-
+    const { id } = useParams()
+    const spots = useSelector((state) => Object.values(state.spots));
+    const spot = spots.find(spot => spot.id === +id);
     const dispatch = useDispatch();
     const history = useHistory();
-    const { id } = useParams()
-    const spots = useSelector((state) => Object.values(state.spots))
+
+    // console.log(spots, spot)
     const sessionUser = useSelector(state => state.session.user);
 
     const [userId, setUserId] = useState('');
@@ -24,6 +25,15 @@ function EditSpot(){
     const [lat, setLat] = useState ('');
     const [lng, setLng] = useState ('');
     const [name, setName] = useState('');
+
+    useEffect(() => {
+        setUserId(spot?.userId)
+        setAddress(spot?.address)
+        setCity(spot?.city)
+        setState(spot?.state)
+        setCountry(spot?.country)
+        setName(spot?.name)
+    }, [spot])
 
     const updateUserId = (e) => setUserId(e.target.value);
     const updateAddress = (e) => setAddress(e.target.value);
@@ -39,19 +49,19 @@ function EditSpot(){
 
         const payload = {
             id,
-            userId: +userId,
+            userId: spot?.userId,
             address,
             city,
             state,
             country,
-            lat,
-            lng,
+            lat: spot?.lat,
+            lng: spot?.lng,
             name,
         }
 
     const spotUpdate = await dispatch(updateSpot(payload))
         if(spotUpdate) {
-            history.push(`./spots/${spot.id}`);
+            history.push(`/home`);
         }
     }
 
@@ -70,33 +80,32 @@ function EditSpot(){
             <NavLink className="homeFormButton" exact to='/home'>Home</NavLink>
             <form onSubmit={handleSubmit}>
                 <div className="updateForms">
-                    <label className="updateFormLabel">User</label>
-                    <input value={userId} onChange={updateUserId} className="updateFormInput"></input>
+                    {/* <label className="updateFormLabel">User</label>
+                    <input value={userId} defaultValue={spot?.userId} onChange={updateUserId} className="updateFormInput"></input> */}
 
                     <label className="updateFormLabel">Address</label>
-                    <input value={address} onChange={updateAddress} className="updateFormInput"></input>
+                    <input value={address} defaultValue={spot?.address} onChange={updateAddress} className="updateFormInput"></input>
 
                     <label className="updateFormLabel">City</label>
-                    <input value={city} onChange={updateCity} className="updateFormInput"></input>
+                    <input value={city} defaultValue={spot?.city} onChange={updateCity} className="updateFormInput"></input>
 
                     <label className="updateFormLabel">State</label>
-                    <input value={state} onChange={updateState} className="updateFormInput"></input>
+                    <input value={state} defaultValue={spot?.state} onChange={updateState} className="updateFormInput"></input>
 
                     <label className="updateFormLabel">Country</label>
-                    <input value={country} onChange={updateCountry} className="updateFormInput"></input>
+                    <input value={country} defaultValue={spot?.country} onChange={updateCountry} className="updateFormInput"></input>
 
-                    <label className="updateFormLabel">Lat</label>
+                    {/* <label className="updateFormLabel">Lat</label>
                     <input value={lat} onChange={updateLat} className="updateFormInput"></input>
 
                     <label className="updateFormLabel">Lng</label>
-                    <input value={lng} onChange={updateLng} className="updateFormInput"></input>
+                    <input value={lng} onChange={updateLng} className="updateFormInput"></input> */}
 
                     <label className="updateFormLabel">Name</label>
-                    <input value={name} onChange={updateName} className="updateFormInput"></input>
+                    <input value={name} defaultValue={spot?.name} onChange={updateName} className="updateFormInput"></input>
 
-                    <button type="submit"> Update
-                        {/* <a href='/home'>Update</a> */}
-                    </button>
+                    <a href='/home'><button type="submit">Update</button></a>
+
                     {/* {sessionUser?.id === spot?.userId &&} */}
                     <button onClick={handleDelete}>Delete</button>
 

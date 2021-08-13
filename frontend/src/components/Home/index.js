@@ -1,5 +1,5 @@
 import './Home.css'
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -41,7 +41,7 @@ function Home() {
                     {filteredSpots.map((spot) =>
                         <div>
                             <li>{spot.name}</li>
-                            <a href={`/edit/${spot.id}`}>Edit</a>
+                            <Link to={`/edit/${spot.id}`}>Edit</Link>
                         </div>
                     )}
                 </div>
