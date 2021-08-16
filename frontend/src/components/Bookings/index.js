@@ -54,7 +54,7 @@ function Bookings() {
 
         const booking = await dispatch(createBooking(payload))
             if(booking) {
-                history.push(`/bookings/${spotId}`)
+                history.push(`/home`)
             }
     }
     // console.log(oneImage)
@@ -100,11 +100,18 @@ function Bookings() {
                             max="2022-06-14T00:00"
                             className="bookingFormInput"></input>
 
+                        <label className="bookingFormLabel">Time you want to stop:</label>
+                        <input type="datetime-local"
+                            value={endDate} onChange={updateEndDate}
+                            min="2018-06-07T00:00"
+                            max="2022-06-14T00:00"
+                            className="bookingFormInput"></input>
+
                         <label className="bookingFormLabel">How many people are coming?</label>
                         <input value={gameSize} onChange={updateGameSize} type="text" required className="bookingFormInput"></input>
 
+                        <button type="submit" className="bookingFormInputButton">Game On!</button>
                     </form>
-                    <button type="submit" className="bookingFormInputButton">Game On!</button>
                 </div>
         </div>
     )

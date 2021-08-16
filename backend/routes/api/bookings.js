@@ -20,4 +20,12 @@ router.post('/', asyncHandler(async(req, res) => {
     res.json(booking)
 }))
 
+//update
+router.put('/:id', asyncHandler(async function(req, res){
+    const bookingId = parseInt(req.params.id);
+    const singleBooking = await Booking.findByPk(bookingId);
+    const updatedBooking = await singleBooking.update(req.body);
+
+    return res.json(updatedBooking)
+}))
 module.exports = router;

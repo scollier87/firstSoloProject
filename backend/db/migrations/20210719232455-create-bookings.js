@@ -25,7 +25,6 @@ module.exports = {
       },
       endDate: {
         type: Sequelize.DATE,
-        allowNull: false,
         defaultValue: Sequelize.fn('now')
       },
       gameSize: {
