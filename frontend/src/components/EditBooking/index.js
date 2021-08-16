@@ -34,7 +34,7 @@ function EditBooking(){
         const updateSpotId = (e) => setSpotId(e.target.value);
         const updateStartDate = (e) => setStartDate(e.target.value);
         const updateEndDate = (e) => setEndDate(e.target.value);
-        const updateGameSize = (e) => setGameSize(e.target.value;)
+        const updateGameSize = (e) => setGameSize(e.target.value);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
