@@ -27,7 +27,7 @@ function Home() {
         dispatch(getSpots());
     }, [dispatch]);
 
-    const filteredSpots = spots.filter(spot => spot.userId === sessionUser.id);
+    const filteredSpots = spots.filter(spot => spot.userId === sessionUser?.id);
 
     // console.log(filteredSpots)
 

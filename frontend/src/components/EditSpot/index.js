@@ -66,11 +66,14 @@ function EditSpot(){
     }
 
     const handleDelete = () => {
-        dispatch(removeSpot(spot.id))
+        dispatch(removeSpot(Number(spot.id)))
+            history.push(`/home`)
+        // console.log(spot.id)
     }
 
     useEffect(() => {
         dispatch(getSpots())
+        // dispatch(handleDelete(spot.id))
     }, [dispatch])
 
     const filteredSpots = spots.filter(spot => spot.userId === sessionUser.id);
@@ -107,7 +110,7 @@ function EditSpot(){
                     <a href='/home'><button type="submit">Update</button></a>
 
                     {/* {sessionUser?.id === spot?.userId &&} */}
-                    <button onClick={handleDelete}>Delete</button>
+                    <button onClick={() => handleDelete(spot?.id)}>Delete</button>
 
                 </div>
             </form>

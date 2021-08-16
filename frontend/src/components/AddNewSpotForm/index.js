@@ -9,6 +9,7 @@ import { NavLink } from 'react-router-dom'
 function AddNewSpotForm(){
     const dispatch = useDispatch();
     const history = useHistory();
+    const sessionUser = useSelector(state => state.session.user);
 
     const [userId, setUserId] = useState('');
     const [address, setAddress] = useState('');
@@ -32,13 +33,13 @@ function AddNewSpotForm(){
         e.preventDefault();
 
         const payload = {
-            userId,
+            userId: sessionUser.id,
             address,
             city,
             state,
             country,
-            lat,
-            lng,
+            // lat,
+            // lng,
             name,
         }
 
@@ -52,8 +53,8 @@ function AddNewSpotForm(){
         <div className="addFormBackground">
             <NavLink className="homeAddFormButton" exact to='/home'>My Page</NavLink>
             <form onSubmit={handleSubmit} className="addNewSpotForm">
-                <label className="addFormLabel">User</label>
-                <input value={userId} onChange={updateUserId} className="addFormInput"></input>
+                {/* <label className="addFormLabel">User</label>
+                <input value={userId} onChange={updateUserId} className="addFormInput"></input> */}
 
                 <label className="addFormLabel">Address</label>
                 <input value={address} onChange={updateAddress} className="addFormInput"></input>
@@ -67,11 +68,11 @@ function AddNewSpotForm(){
                 <label className="addFormLabel">Country</label>
                 <input value={country} onChange={updateCountry} className="addFormInput"></input>
 
-                <label className="addFormLabel">Latitude</label>
+                {/* <label className="addFormLabel">Latitude</label>
                 <input value={lat} onChange={updateLat} className="addFormInput"></input>
 
                 <label className="addFormLabel">Longitude</label>
-                <input value={lng} onChange={updateLng} className="addFormInput"></input>
+                <input value={lng} onChange={updateLng} className="addFormInput"></input> */}
 
                 <label className="addFormLabel">Name of Court</label>
                 <input value={name} onChange={updateName} className="addFormInput"></input>
