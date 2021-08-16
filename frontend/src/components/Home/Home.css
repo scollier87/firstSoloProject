@@ -81,13 +81,17 @@
 
 }
 
-/* .myBookings1 {
+.myBookings1 {
     border: 5px royalblue solid;
-    color:white;
+    background-color: white;
+    color: black;
+    font: bold;
+    font-size: 14pt;
     position: fixed;
     top: 200px;
     bottom: 300px;
     left: 750px;
     width: 200px;
     text-align: center;
-} */
+    overflow: auto;
+}

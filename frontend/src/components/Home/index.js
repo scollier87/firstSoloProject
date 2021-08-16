@@ -6,13 +6,14 @@ import { useEffect } from 'react';
 import { getSpots } from '../../store/spots';
 import { getImages } from '../../store/images';
 import { getOneSpot } from '../../store/spots'
-import {Bookings} from '../Bookings';
+import { getBookings } from '../../store/bookings';
 
 function Home() {
     const dispatch = useDispatch();
     const spots = useSelector((state) => Object.values(state.spots));
     const images = useSelector((state) => Object.values(state.images));
     const spot = useSelector((state) => Object.values(state.spots));
+    const bookings = useSelector((state) => Object.values(state.bookings));
 
     const sessionUser = useSelector(state => state.session.user);
 
@@ -25,11 +26,12 @@ function Home() {
     useEffect(() => {
         dispatch(getImages());
         dispatch(getSpots());
+        dispatch(getBookings());
     }, [dispatch]);
 
     const filteredSpots = spots.filter(spot => spot.userId === sessionUser?.id);
-
-    // console.log(filteredSpots)
+    const filteredBookings = bookings.filter(booking => booking.userId === sessionUser?.id)
+    console.log(filteredBookings)
 
     // useEffect(() => {
     //     dispatch(getOneSpot());
@@ -46,7 +48,16 @@ function Home() {
                     )}
                 </div>
         </div>
-            {/* <div className="myBookings1">My Bookings</div> */}
+            <div className="myBookings1">My Bookings
+                <div>
+                    {filteredBookings.map((booking) => (
+                        <div>
+                            <li>{booking.Spot?.name}</li>
+                            <Link to={`/spots/${booking.spotId}`}>Edit</Link>
+                        </div>
+                    ))}
+                </div>
+            </div>
             <NavLink className="homeButton" exact to='/'>Home</NavLink>
             {/* <div className="profileDropdown">{sessionLinks}</div> */}
             <div className="spotSlider">

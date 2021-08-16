@@ -1,15 +1,18 @@
 import './Bookings.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getSpots } from '../../store/spots'
 import { getBookings } from '../../store/bookings'
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useParams } from 'react-router';
 import { createSpot } from '../../store/spots'
 import {getImages} from'../../store/images'
+import { createBooking } from '../../store/bookings'
 
 function Bookings() {
     const dispatch = useDispatch();
+    const history = useHistory();
+    const sessionUser = useSelector(state => state.session.user);
     const bookings = useSelector((state) => Object.values(state.bookings));
     const spots = useSelector((state) => Object.values(state.spots));
     const images = useSelector((state) => Object.values(state.images));
@@ -25,6 +28,35 @@ function Bookings() {
     const oneImage = images.find((image) =>{
         return +image.spotId === individualSpot.id
     })
+
+    const [spotId, setSpotId] = useState('');
+    const [userId, setUserId] = useState('');
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [gameSize, setGameSize] = useState('');
+
+    const updateSpotId = (e) => setSpotId(e.target.value);
+    const updateUserId = (e) => setUserId(e.target.value);
+    const updateStartDate = (e) => setStartDate(e.target.value);
+    const updateEndDate = (e) => setEndDate(e.target.value);
+    const updateGameSize = (e) => setGameSize(e.target.value);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const payload = {
+            spotId: +id,
+            userId: sessionUser.id,
+            startDate,
+            endDate,
+            gameSize,
+        }
+
+        const booking = await dispatch(createBooking(payload))
+            if(booking) {
+                history.push(`/bookings/${spotId}`)
+            }
+    }
     // console.log(oneImage)
     // console.log("images", images)
     // const citySpot = spots.find((spot) => {
@@ -36,6 +68,7 @@ function Bookings() {
     useEffect(() => {
         dispatch(getSpots());
         dispatch(getImages());
+        // dispatch(getBookings());
     }, [dispatch]);
 
 
@@ -55,21 +88,23 @@ function Bookings() {
                     {/* <img className="bookingBa"></img> */}
                 </div>
                 <div className="bookingFormBox">
-                    <form action=" " method="get" className="form">
+                    <form onSubmit={handleSubmit} action=" " method="post" className="form">
 
-                        <label for="name" className="bookingFormLabel">Enter your name:</label>
-                        <input type = "text" name="name" id="name" required className="bookingFormInput"></input>
+                        {/* <label className="bookingFormLabel" for="name" >Enter your name:</label>
+                        <input type = "text" required className="bookingFormInput"></input> */}
 
-                        <label for="meeting-time" className="bookingFormLabel">Time you want to play:</label>
-                        <input type="datetime-local" id="meeting-time"
-                            name="meeting-time" value="2022-06-12T19:30"
-                            min="2018-06-07T00:00" max="2022-06-14T00:00" className="bookingFormInput"></input>
+                        <label className="bookingFormLabel">Time you want to play:</label>
+                        <input type="datetime-local"
+                            value={startDate} onChange={updateStartDate}
+                            min="2018-06-07T00:00"
+                            max="2022-06-14T00:00"
+                            className="bookingFormInput"></input>
 
-                        <label for="game size" className="bookingFormLabel">How many people are coming?</label>
-                        <input type="text" name="name" id="name" required className="bookingFormInput"></input>
+                        <label className="bookingFormLabel">How many people are coming?</label>
+                        <input value={gameSize} onChange={updateGameSize} type="text" required className="bookingFormInput"></input>
 
                     </form>
-                    <input type="submit" value="Game On!" className="bookingFormInputButton"></input>
+                    <button type="submit" className="bookingFormInputButton">Game On!</button>
                 </div>
         </div>
     )
