@@ -7,6 +7,7 @@ import { getSpots } from '../../store/spots';
 import { getImages } from '../../store/images';
 import { getOneSpot } from '../../store/spots'
 import { getBookings } from '../../store/bookings';
+import BookingFormModal from '../EditBooking'
 
 function Home() {
     const dispatch = useDispatch();
@@ -53,7 +54,8 @@ function Home() {
                     {filteredBookings.map((booking) => (
                         <div>
                             <li>{booking.Spot?.name}</li>
-                            <Link to={`/spots/${booking.spotId}`}>Edit</Link>
+                            <li><BookingFormModal booking={booking}/></li>
+                            {/* <Link to={`/spots/${booking.spotId}`}>Edit</Link> */}
                         </div>
                     ))}
                 </div>

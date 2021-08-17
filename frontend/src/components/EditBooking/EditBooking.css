@@ -1,0 +1,39 @@
+.updateMyBooking {
+    font: black;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10px;
+}
+
+/* .updateBookingButton {
+    border: 2px black solid;
+} */
+
+.updateBookingForms {
+    font: white;
+    background-color: white;
+    /* border: 3px magenta solid; */
+    width: 20vh;
+}
+
+.updateBookingLabel {
+    font: white;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.bookingButtonUpdate {
+    font: black;
+    border: 2px;
+    display: flex;
+    top: 300px;
+}
+
+.updateBooking {
+    font: black;
+    border: 2px;
+    display: flex;
+}

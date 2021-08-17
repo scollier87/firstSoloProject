@@ -40,7 +40,7 @@ export const getBookings = () => async (dispatch) => {
 }
 
 export const updateBooking = data => async (dispatch) => {
-    const response = await csrfFetch(`/api/bookings/${data/id}`, {
+    const response = await csrfFetch(`/api/bookings/${data.id}`, {
         method: 'put',
         headers: {
             'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ const bookingsReducer = (state = initialState, action) => {
                 return newState
             }
         }
-        
+
         case UPDATE_BOOKING:{
             return {
                 ...state,

@@ -13,6 +13,8 @@ import Bookings from "./components/Bookings";
 import AddNewSpotForm from "./components/AddNewSpotForm"
 import EditSpot from "./components/EditSpot"
 import ProfileButton from "./components/Navigation/ProfileButton";
+import EditBooking from "./components/EditBooking";
+import BookingFormModal from "./components/EditBooking";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +39,7 @@ function App() {
               <Home/>
               <Homeheader/>
               <ProfileButton/>
+              {/* <BookingFormModal/> */}
             </Route>
             <Route path="/spots/:id">
               <Bookings/>
