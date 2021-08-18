@@ -51,7 +51,7 @@ function Home() {
         </div>
             <div className="myBookings1">My Bookings
                 <div>
-                    {filteredBookings.map((booking) => (
+                    {filteredBookings?.map((booking) => (
                         <div>
                             <li>{booking.Spot?.name}</li>
                             <li><BookingFormModal booking={booking}/></li>

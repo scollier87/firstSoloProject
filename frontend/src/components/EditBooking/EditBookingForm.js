@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 import { useParams } from 'react-router'
 import { getBookings } from '../../store/bookings'
 
-function EditBooking({booking}){
+function EditBooking({booking, setShowModal}){
     const id = booking.id;
     // const { id } = useParams()
     const bookings = useSelector((state) => Object.values(state.bookings));
@@ -15,7 +15,7 @@ function EditBooking({booking}){
     const dispatch = useDispatch();
     const history = useHistory();
 
-    console.log("booking", booking)
+    // console.log("booking", booking)
 
     const sessionUser = useSelector(state => state.session.user);
     const [bookingId, setBookingId] = useState('');
@@ -53,6 +53,7 @@ function EditBooking({booking}){
 
         const bookingUpdate = await dispatch(updateBooking(payload))
             if (bookingUpdate) {
+                setShowModal();
                 history.push(`/home`);
             }
     }
