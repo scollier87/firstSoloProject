@@ -2,15 +2,14 @@ import './EditBooking.css'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
-import { updateBooking } from '../../store/bookings'
+import { getBookings, updateBooking, removeBooking } from '../../store/bookings'
 import { NavLink } from 'react-router-dom'
 import { useParams } from 'react-router'
-import { getBookings } from '../../store/bookings'
 
 function EditBooking({booking, setShowModal}){
     const id = booking.id;
     // const { id } = useParams()
-    const bookings = useSelector((state) => Object.values(state.bookings));
+    const bookings = useSelector((state) => Object.values(state?.bookings));
     // const bookingg = bookings.find(booking => booking.id === +id);
     const dispatch = useDispatch();
     const history = useHistory();
@@ -58,6 +57,12 @@ function EditBooking({booking, setShowModal}){
             }
     }
 
+    const handleDelete = () => {
+        dispatch(removeBooking(Number(booking.id)))
+            setShowModal();
+            history.push(`/home`)
+    }
+
     useEffect(() => {
         dispatch(getBookings())
     }, [dispatch])
@@ -67,7 +72,7 @@ function EditBooking({booking, setShowModal}){
 
     return (
         <div className="updateMyBooking">
-            <NavLink className="updateBookingButton" exact to='/home'>Home</NavLink>
+            {/* <NavLink className="updateBookingButton" exact to='/home'>Home</NavLink> */}
             <form onSubmit={handleSubmit}>
                 <div className='updateBookingForms'>
                     <label className='updateBookingLabel'>Start Time</label>
@@ -77,6 +82,8 @@ function EditBooking({booking, setShowModal}){
                     <input value={gameSize} defaultValue={booking?.gameSize} onChange={updateGameSize}></input>
 
                     <a className='bookingButtonUpdate' href='/home'><button type='submit'>Update</button></a>
+
+                    <button onClick={() => handleDelete(booking?.id)}>Delete</button>
                 </div>
             </form>
 

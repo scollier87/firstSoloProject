@@ -77,6 +77,7 @@ function Bookings() {
             <div className="bookingsImageBackground">
                 <img src={oneImage?.url}  alt={oneImage?.id} className="bookingsBackground"/>
             </div>
+            <div className="bookingsPageDiv">
                 <NavLink className="homeBookingsButton" exact to='/home'>Home</NavLink>
                 <div className="bookingsBorder">
                     <div className="courtName">{individualSpot?.name}</div>
@@ -113,6 +114,7 @@ function Bookings() {
                         <button type="submit" className="bookingFormInputButton">Game On!</button>
                     </form>
                 </div>
+            </div>
         </div>
     )
 }

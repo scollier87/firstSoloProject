@@ -8,7 +8,7 @@ function BookingFormModal({booking}) {
 
     return (
         <>
-            <button className="updateBooking" onClick={() => setShowModal(true)}>Update</button>
+            <button className="updateBooking" onClick={() => setShowModal(true)}>Edit Date & Time</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <EditBooking booking={booking} setShowModal={setShowModal}/>

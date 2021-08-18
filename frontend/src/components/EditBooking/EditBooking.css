@@ -12,7 +12,7 @@
 
 .updateBookingForms {
     font: white;
-    background-color: white;
+    background-color:white;
     /* border: 3px magenta solid; */
     width: 20vh;
 }
@@ -33,7 +33,12 @@
 }
 
 .updateBooking {
-    font: black;
-    border: 2px;
+    font: 15px black;
+    border: solid black 2px;
     display: flex;
+    left: 125px;
+}
+
+.updateBooking:hover {
+    cursor: pointer;
 }

@@ -82,8 +82,8 @@
 }
 
 .myBookings1 {
-    border: 5px royalblue solid;
-    background-color: white;
+    /* border: 5px royalblue solid; */
+    background-color: whitesmoke;
     color: black;
     font: bold;
     font-size: 14pt;

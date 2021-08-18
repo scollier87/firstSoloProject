@@ -11,12 +11,17 @@
 }
 
 .form{
-    margin-left: 280px;
+    top: 25px;
+    bottom: 25px;
+    left: 25px;
+    right: 25px;
+    width: 250px;
+    margin-left: 220px;
     position: relative;
 }
 
 .bookingFormInputButton{
-    margin-left: 365px;
+    margin-left: 50px;
     position: relative;
     margin-top: 10px;
 }
@@ -36,7 +41,7 @@
     top: 100px;
     height: 100px;
     width: 100px;
-    right: 10%;
+    right: 300px;
     background-size: 100% 100%;
 } */
 
@@ -46,6 +51,7 @@
     top: 200px;
     position: center;
     left: 50px;
+    margin-left: 150px;
     /* height: 75vh; */
     /* background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -62,7 +68,7 @@
 border: 3px black solid;
 position: absolute;
 top: 350px;
-left: 575px;
+left: 550px;
 }
 
 .courtName {
@@ -124,4 +130,12 @@ left: 575px;
     display: inline-block;
     box-sizing: border-box;
     /* left: 400px; */
+}
+
+.bookingsPageDiv {
+    border: transparent solid 2px;
+    position: relative;
+    left: 200px;
+    height: 600px;
+    width: 1000px;
 }

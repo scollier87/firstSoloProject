@@ -53,8 +53,10 @@ function Home() {
                 <div>
                     {filteredBookings?.map((booking) => (
                         <div>
-                            <li>{booking.Spot?.name}</li>
-                            <li><BookingFormModal booking={booking}/></li>
+                            <h3>{booking.Spot?.name}</h3>
+                            <p>{booking?.startDate}</p>
+                            <p>How many people are you bringing? {booking?.gameSize}</p>
+                            <a><BookingFormModal booking={booking}/></a>
                             {/* <Link to={`/spots/${booking.spotId}`}>Edit</Link> */}
                         </div>
                     ))}

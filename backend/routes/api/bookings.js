@@ -28,4 +28,12 @@ router.put('/:id', asyncHandler(async function(req, res){
 
     return res.json(updatedBooking)
 }))
+
+//delete
+router.delete('/:id', asyncHandler(async(req, res) => {
+    const bookingId = parseInt(req.params.id)
+    const booking = await Booking.destroy({where: {id: bookingId}});
+    return res.json(booking)
+}))
+
 module.exports = router;
