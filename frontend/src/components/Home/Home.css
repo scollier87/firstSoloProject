@@ -14,16 +14,16 @@
 }
 .spotSlider {
     /* border: 15px red solid; */
-    /* background-color: white; */
+    background-color: rgb(114, 32, 114);
     position: fixed;
     /* margin: 50px; */
-    margin-left: 50px;
+    margin-left: 100px;
     /* padding: 30px; */
-    top: 655px;
+    top: 610px;
     bottom: 300px;
-    height: 215px;
+    height: 195px;
     overflow: auto;
-    width: 90%;
+    width: 83.5%;
     display: flex;
     /* flex-direction: column; */
 }
@@ -66,32 +66,44 @@
 }
 
 .myCreatedCourts {
-    border: 5px royalblue solid;
-    background-color: white;
+    border: 5px #FDB927 solid;
+    background-color: rgb(114, 32, 114);
     color: black;
     font: bold;
-    font-size: 14pt;
+    font-size: 12pt;
     position: fixed;
     top: 200px;
     bottom: 300px;
-    left: 125px;
+    left: 50px;
     width: 200px;
     text-align: center;
     overflow: auto;
 
 }
 
-.myBookings1 {
-    /* border: 5px royalblue solid; */
-    background-color: whitesmoke;
+.createdCourtSpots{
+    list-style-type: none;
+}
+
+.createdCourtEditBtn{
+    /* border: 2px solid black; */
+    text-decoration: none;
     color: black;
-    font: bold;
-    font-size: 14pt;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    /* position: relative;
+    left: 50px; */
+}
+.myBookings1 {
+    border: 5px #FDB927 solid;
+    background-color: rgb(114, 32, 114);
+    color: black;
+    font-size: 12pt;
     position: fixed;
     top: 200px;
     bottom: 300px;
-    left: 750px;
-    width: 400px;
+    right: 50px;
+    width: 200px;
     text-align: center;
     overflow: auto;
 }

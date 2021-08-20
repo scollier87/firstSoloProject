@@ -93,30 +93,30 @@ const spotsReducer = ( state = initialState, action) => {
             return { ...state, ...Object.fromEntries(action.spots.map((spot) =>[
                 spot.id, spot])) };
         case CREATE_SPOT:
-            if (!state[action.spot.id]){
-                const newState = {
-                    ...state,
-                    [action.spot.id]: action.spot,
-                };
-                return newState;
-
-            }
-            case UPDATE_SPOT: {
-            return {
+        if (!state[action.spot.id]){
+            const newState = {
                 ...state,
                 [action.spot.id]: action.spot,
-                };
-            }
-            case REMOVE_SPOT: {
-                // const newState = { ...state };
-                // delete newState[action.spotId];
-                delete state[action.spotId]
-                // console.log(action.spotId)
-                return { ...state };
+            };
+            return newState;
 
-            }
-            default:
-            return state;
+        }
+        case UPDATE_SPOT: {
+        return {
+            ...state,
+            [action.spot.id]: action.spot,
+            };
+        }
+        case REMOVE_SPOT: {
+            // const newState = { ...state };
+            // delete newState[action.spotId];
+            delete state[action.spotId]
+            // console.log(action.spotId)
+            return { ...state };
+
+        }
+        default:
+        return state;
     }
 }
 

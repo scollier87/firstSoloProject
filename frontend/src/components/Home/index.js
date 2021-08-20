@@ -43,8 +43,8 @@ function Home() {
                 <div>
                     {filteredSpots.map((spot) =>
                         <div>
-                            <li>{spot.name}</li>
-                            <Link to={`/edit/${spot.id}`}>Edit</Link>
+                            <li className="createdCourtSpots">{spot.name}</li>
+                            <Link to={`/edit/${spot.id}`} className="createdCourtEditBtn"><img src="https://img.icons8.com/office/16/000000/edit.png"/></Link>
                         </div>
                     )}
                 </div>
@@ -55,14 +55,14 @@ function Home() {
                         <div>
                             <h3>{booking.Spot?.name}</h3>
                             <p>{booking?.startDate}</p>
-                            <p>How many people are you bringing? {booking?.gameSize}</p>
+                            <p>Number of People? {booking?.gameSize}</p>
                             <a><BookingFormModal booking={booking}/></a>
                             {/* <Link to={`/spots/${booking.spotId}`}>Edit</Link> */}
                         </div>
                     ))}
                 </div>
             </div>
-            <NavLink className="homeButton" exact to='/'>Home</NavLink>
+            {/* <NavLink className="homeButton" exact to='/'>Home</NavLink> */}
             {/* <div className="profileDropdown">{sessionLinks}</div> */}
             <div className="spotSlider">
                 {images.map((image) =>

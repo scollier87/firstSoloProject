@@ -12,10 +12,11 @@
 }
 
 .addNewSpotForm {
-    height: 585px;
+    background-color: #FDB927;
+    height: 400px;
     width: 225px;
-    padding: 10px;
-    /* border:3px black  solid; */
+    padding: 10px;;
+    border:3px black  solid;
 }
 
 .addFormLabel {
@@ -43,14 +44,18 @@
 }
 
 .addFormBackground {
-    background-image: url("NbaKobeLogo.jpeg");
+    background-image: url("newKobeLogo.jpeg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bookingsBackground {

@@ -1,22 +1,22 @@
 .homeHeader {
     /* border: 5px rgb(4, 0, 255) solid; */
-    position: fixed;
+    position: absolute;
     margin: 50px;
     padding: 5px;
-    top: 1px;
-    bottom: 75px;
+    /* top: 1px; */
+    /* bottom: 75px; */
     height: 75px;
     width: 1300px
 }
 
 .profilePic{
     border: 3px black solid;
-    position: fixed;
+    position: absolute;
     margin: 25px;
     padding: 20px;
     top: 38px;
     bottom: 25px;
-    left: 50px;
+    right: 150px;
     height: 25px;
     width: 12px;
 }
@@ -74,16 +74,25 @@
     position: fixed;
     margin: 25px;
     padding: 10px;
-    top: 50px;
+    top: 35px;
     bottom: 25px;
-    right: 215px;
+    right: 100px;
     height: 25px;
     width: 115px;
     text-align: center;
 }
 
 .profileIcon {
-    position: absolute;
-    left: 100px;
-    top: 65px;
+    border: black solid 3px;
+    position: relative;
+    left: 1350px;
+    top: 50px;
+}
+
+.homeLogOutBtn {
+    border: black solid 3px;
+    background-color: rgb(114, 32, 114);
+    color: black;
+    left: 1235px;
+    top:25px;
 }

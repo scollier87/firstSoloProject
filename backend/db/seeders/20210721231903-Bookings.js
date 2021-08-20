@@ -6,6 +6,7 @@ module.exports = {
       {
         spotId: 1,
         userId: 1,
+        startDate: "2021-08-18 16:49:02.121441-07",
         gameSize: '3 on 3',
 
       }

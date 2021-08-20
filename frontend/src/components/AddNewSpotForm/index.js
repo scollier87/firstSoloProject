@@ -3,14 +3,17 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { createSpot } from '../../store/spots'
+import { createImage, updateImage } from '../../store/images'
 import { NavLink } from 'react-router-dom'
 // import e from 'express'
 
 function AddNewSpotForm(){
+    const images = useSelector((state) => Object.values(state?.images));
     const dispatch = useDispatch();
     const history = useHistory();
-    const sessionUser = useSelector(state => state.session.user);
 
+    const sessionUser = useSelector(state => state.session.user);
+    const [url, setUrl] = useState('');
     const [userId, setUserId] = useState('');
     const [address, setAddress] = useState('');
     const [city, setCity] = useState('');
@@ -28,6 +31,7 @@ function AddNewSpotForm(){
     const updateLat = (e) => setLat(e.target.value);
     const updateLng = (e) => setLng(e.target.value);
     const updateName = (e) => setName(e.target.value);
+    const updateUrl = (e) => setUrl(e.target.value)
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -40,9 +44,10 @@ function AddNewSpotForm(){
             country,
             // lat,
             // lng,
+            url,
             name,
         }
-
+        
     const spot = await dispatch(createSpot(payload))
         if(spot) {
             history.push(`/spots/${spot.id}`);
@@ -73,6 +78,9 @@ function AddNewSpotForm(){
 
                 <label className="addFormLabel">Longitude</label>
                 <input value={lng} onChange={updateLng} className="addFormInput"></input> */}
+
+                <label className='addFormLabel'>Image</label>
+                <input value={url} defaultValue={images?.url} onChange={updateUrl} className="addFormInput"></input>
 
                 <label className="addFormLabel">Name of Court</label>
                 <input value={name} onChange={updateName} className="addFormInput"></input>

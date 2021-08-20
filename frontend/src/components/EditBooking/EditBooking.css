@@ -12,31 +12,61 @@
 
 .updateBookingForms {
     font: white;
-    background-color:white;
+    background-color:#17408B;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
     /* border: 3px magenta solid; */
-    width: 20vh;
+    width: 40vh;
+    height: 35vh;
 }
 
 .updateBookingLabel {
     font: white;
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.updateBookingInput {
+    font: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
     margin: 10px;
 }
 
 .bookingButtonUpdate {
+    border: 2px solid black;
     font: black;
-    border: 2px;
+    font-size: 10pt;
+    /* border: 2px; */
     display: flex;
     top: 300px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.bookingButtonDelete {
+    border: 2px solid black;
+    font: black;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    /* border: 2px; */
+    display: flex;
+    /* top: 325px; */
 }
 
 .updateBooking {
     font: 15px black;
     border: solid black 2px;
     display: flex;
-    left: 125px;
+    left: 40px;
 }
 
 .updateBooking:hover {

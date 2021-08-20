@@ -11,12 +11,19 @@ router.get('/', asyncHandler(async (req, res) => {
             model: Spot
         }
     });
+
+    const newBookings = bookings.map(oneBooking => {
+        oneBooking.startDate = oneBooking.formatDate()
+        return oneBooking;
+    })
+
     res.json(bookings);
 }));
 
 //create a booking
 router.post('/', asyncHandler(async(req, res) => {
     const booking = await Booking.create(req.body);
+    booking.startDate = booking.formatDate();
     res.json(booking)
 }))
 
@@ -25,8 +32,14 @@ router.put('/:id', asyncHandler(async function(req, res){
     const bookingId = parseInt(req.params.id);
     const singleBooking = await Booking.findByPk(bookingId);
     const updatedBooking = await singleBooking.update(req.body);
+    const singleUpdatedBooking = await Booking.findByPk(bookingId, {
+        include: [{
+            model: Spot,
+        }]
+    });
+    singleUpdatedBooking.startDate = singleUpdatedBooking.formatDate();
 
-    return res.json(updatedBooking)
+    return res.json(singleUpdatedBooking)
 }))
 
 //delete

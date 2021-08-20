@@ -19,9 +19,8 @@ module.exports = {
         references: { model: 'Users' }
       },
       startDate: {
-        type: Sequelize.DATE,
         allowNull: false,
-        defaultValue: Sequelize.fn('now')
+        type: Sequelize.STRING,
       },
       endDate: {
         type: Sequelize.DATE,

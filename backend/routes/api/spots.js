@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
 
-const { Spot, Review } = require('../../db/models');
+const { Spot, Review, Image } = require('../../db/models');
 //get spots
 router.get('/', asyncHandler(async (req, res) => {
     const spots = await Spot.findAll({ include: { model: Review}});
@@ -15,8 +15,11 @@ router.get('/:id', asyncHandler(async (req, res) => {
 }));
 // //create a spot
 router.post('/', asyncHandler(async(req, res) => {
+    const { url } = req.body;
     const spot = await Spot.create(req.body);
-    res.json(spot);
+    const image = await Image.create({ url, spotId: spot.id });
+    const newSpot = await Spot.findByPk(spot.id, { include: Image });
+    return res.json(newSpot);
 }));
 //update
 router.put('/:id', asyncHandler(async function(req, res) {

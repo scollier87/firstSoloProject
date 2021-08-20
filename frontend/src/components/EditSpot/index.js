@@ -107,10 +107,10 @@ function EditSpot(){
                     <label className="updateFormLabel">Name</label>
                     <input value={name} defaultValue={spot?.name} onChange={updateName} className="updateFormInput"></input>
 
-                    <a href='/home'><button type="submit">Update</button></a>
+                    <a className="editSpotUpdate" href='/home'><button type="submit">Update</button></a>
 
                     {/* {sessionUser?.id === spot?.userId &&} */}
-                    <button onClick={() => handleDelete(spot?.id)}>Delete</button>
+                    <button className="editSpotDelete" onClick={() => handleDelete(spot?.id)}>Delete</button>
 
                 </div>
             </form>

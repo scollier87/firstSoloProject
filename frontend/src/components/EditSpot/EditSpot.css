@@ -1,5 +1,4 @@
 .updateFormLabel {
-    font: white;
     display: flex;
     justify-content: center;
     font-weight: bold;
@@ -7,34 +6,76 @@
 }
 
 .updateFormInput {
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    margin: 10px;
+    width: 100%;
+    padding: 4px 8px;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 .updateForms {
-    font: white;
-    background-color: white;
-    /* border: 3px magenta solid; */
-    width: 20vh;
+    font: #FDB927;
+    background-color:  #552583;
+    border: 3px black solid;
+    color: white;
+    height: 435px;
+    width: 225px;
+    padding: 10px;
+    /* display: flex;
+    justify-content: center; */
 }
 
 .homeFormButton {
-    border: 2px black solid;
+    text-decoration: none;
+    color:white;
+    position: fixed;
+    margin: 25px;
+    padding: 10px;
+    top: 10px;
+    right: 35px;
+    height: 35px;
+    width: 70px;
 }
 
 .updateMySpot {
     background-image: url(blueLine.jpeg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .editSpotsCurrent {
     border: 3px magenta solid;
+}
+
+.editSpotUpdate {
+    border:2px white solid;
+    font:12px;
+    color: white;
+    display: flex;
+    text-decoration: none;
+    width: 95px;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 59px;
+    justify-content: center;
+}
+
+.editSpotDelete {
+    border:2px white solid;
+    font:30px;
+    color: white;
+    display: flex;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    justify-content: center;
+    margin-left: 55px;
 }

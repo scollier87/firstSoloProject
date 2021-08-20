@@ -50,11 +50,13 @@ function EditBooking({booking, setShowModal}){
             gameSize,
         }
 
+
         const bookingUpdate = await dispatch(updateBooking(payload))
             if (bookingUpdate) {
                 setShowModal();
                 history.push(`/home`);
             }
+
     }
 
     const handleDelete = () => {
@@ -76,14 +78,18 @@ function EditBooking({booking, setShowModal}){
             <form onSubmit={handleSubmit}>
                 <div className='updateBookingForms'>
                     <label className='updateBookingLabel'>Start Time</label>
-                    <input value={startDate} defaultValue={booking?.startDate} onChange={updateStartDate} className='updateBookingInput'></input>
+                    <input type="datetime-local"
+                        value={startDate} onChange={updateStartDate}
+                        min="2018-06-07T00:00"
+                        max="2022-06-14T00:00"
+                        className='updateBookingInput'></input>
 
                     <label className='updateBookingLabel'>How many people are coming?</label>
                     <input value={gameSize} defaultValue={booking?.gameSize} onChange={updateGameSize}></input>
 
                     <a className='bookingButtonUpdate' href='/home'><button type='submit'>Update</button></a>
 
-                    <button onClick={() => handleDelete(booking?.id)}>Delete</button>
+                    <button className="bookingButtonDelete" onClick={() => handleDelete(booking?.id)}>Delete</button>
                 </div>
             </form>
 
