@@ -1,11 +1,14 @@
 import "./LandingPage.css";
-import {NavLink} from 'react-router-dom';
+import {NavLink, Redirect} from 'react-router-dom';
 import LoginFormModal from "../LoginFormModal";
 import { login } from '../../store/session'
+import { useDispatch, useSelector } from "react-redux";
 
 
 
 function LandingPage() {
+   const dispatch = useDispatch()
+   const sessionUser = useSelector(state => state.session.user)
    const sessionLinks = (
         <>
           <LoginFormModal />
@@ -24,6 +27,10 @@ function LandingPage() {
         console.log(demoUser)
         dispatch(login(demoUser));
       }
+
+      if(sessionUser) return (
+        <Redirect to='/home'/>
+      )
 
     return (
         <div className="background">
