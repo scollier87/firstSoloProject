@@ -34,6 +34,12 @@ function LandingPage() {
             <NavLink className="splashSignUpBtn" to="/signup">Sign Up</NavLink>
             </div>
             <h1>Gamin' 4 Hoops</h1>
+            <div className='spl_Footer'>
+            <a href='https://github.com/scollier87' target='_blank'><img className='spl_About' src="https://img.icons8.com/ios/50/000000/github--v1.png" alt="GithubImage"/></a>
+            <h3>Created by Sean Collier</h3>
+            <a href='https://www.linkedin.com/in/sean-collier-65b32412b/' target='_blank'><img className='spl_About' src="https://img.icons8.com/ios/50/000000/linkedin.png" alt="LinkedinImage"/></a>
+
+            </div>
         </div>
     )
 }

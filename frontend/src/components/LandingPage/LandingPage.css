@@ -7,10 +7,12 @@
     bottom: 0;
     right: 0;
     left: 0;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.backgroundLayer2 {
+/* .backgroundLayer2 {
     position: absolute;
     top: 25%;
     left: 8%;
@@ -22,9 +24,9 @@
     /* display: flex;
     justify-content: center;
     align-items: center; */
-}
+/* } */
 
-.backgroundLayer3 {
+/* .backgroundLayer3 {
     background-image: url(kobenGigi.jpeg);
     background-repeat: no-repeat;
     position: absolute;
@@ -34,14 +36,14 @@
     width: 20%;
     height: 50%;
 
-}
+} */
 
 h1 {
-    position: absolute;
-    left: 40%;
-    top: 40%;
-    font-size: 50px;
-    color: rgb(230, 230, 34);
+    font-size: 100px;
+    color: yellow;
+    background-color: purple;
+    padding: 1%;
+    height: fit-content;
 }
 
 .signUp {
@@ -84,4 +86,17 @@ button {
 
 .demoBtn:hover{
     cursor: pointer;
+}
+
+.spl_Footer{
+    background-color: gray;
+    font: 25px;
+    width: 100%;
+    height: 5%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
 }
