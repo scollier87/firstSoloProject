@@ -44,9 +44,44 @@ h1 {
     color: rgb(230, 230, 34);
 }
 
+.signUp {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    border: purple solid 3px;
+    width: fit-content;
+}
+
 button {
     position: relative;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
     background-color: transparent;
     border: transparent;
+}
+
+.splashHeader {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    align-items: center;
+    justify-content: space-evenly;
+    left: 0;
+    right: 0;
+    top: 0;
+    /* width: 100%; */
+}
+
+.demoBtn {
+    width: fit-content;
+}
+
+.splashSignUpBtn {
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.demoBtn:hover{
+    cursor: pointer;
 }
