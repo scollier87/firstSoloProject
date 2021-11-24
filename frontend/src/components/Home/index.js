@@ -48,7 +48,7 @@ function Home() {
                         </div>
                     )}
                 </div>
-        </div>
+            </div>
             <div className="myBookings1">My Bookings
                 <div>
                     {filteredBookings?.map((booking) => (
