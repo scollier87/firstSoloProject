@@ -1,8 +1,14 @@
 'use strict';
 
+let options = {};
+if (process.env.NODE_ENV === 'production') {
+  options.schema = process.env.SCHEMA;
+}
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Images', [
+    options.tableName = 'Images'
+    return queryInterface.bulkInsert(options, [
       {
         spotId: 1,
         url: "https://storage.googleapis.com/explorest-photo-usa/california/tlund-erwin-basketball-compressed.jpg"
@@ -87,6 +93,7 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Images', null, {});
+    options.tableName = 'Images'
+    return queryInterface.bulkDelete(options, null, {});
   }
 };

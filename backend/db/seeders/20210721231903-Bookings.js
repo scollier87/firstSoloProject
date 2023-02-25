@@ -1,8 +1,14 @@
 'use strict';
 
+let options = {};
+if (process.env.NODE_ENV === 'production') {
+  options.schema = process.env.SCHEMA;
+}
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Bookings', [
+    options.tableName = 'Bookings'
+    return queryInterface.bulkInsert(options, [
       {
         spotId: 1,
         userId: 1,
@@ -23,7 +29,8 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Bookings', null, {});
+    options.tableName = 'Bookings'
+    return queryInterface.bulkDelete(options, null, {});
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
