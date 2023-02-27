@@ -14,7 +14,6 @@ function EditSpot(){
     const dispatch = useDispatch();
     const history = useHistory();
 
-    // console.log(spots, spot)
     const sessionUser = useSelector(state => state.session.user);
 
     const [userId, setUserId] = useState('');
@@ -68,7 +67,6 @@ function EditSpot(){
     const handleDelete = () => {
         dispatch(removeSpot(Number(spot.id)))
             history.push(`/home`)
-        // console.log(spot.id)
     }
 
     useEffect(() => {
@@ -77,7 +75,6 @@ function EditSpot(){
     }, [dispatch])
 
     const filteredSpots = spots.filter(spot => spot.userId === sessionUser.id);
-    console.log(filteredSpots)
     return (
         <div className="updateMySpot">
             <NavLink className="homeFormButton" exact to='/home'>Home</NavLink>

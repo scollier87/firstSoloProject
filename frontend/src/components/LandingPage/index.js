@@ -24,7 +24,6 @@ function LandingPage() {
 
       const demoUserLogin = () => {
         const demoUser = ['Demo-lition', 'password']
-        console.log(demoUser)
         dispatch(login(demoUser));
       }
 

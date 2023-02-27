@@ -14,8 +14,6 @@ function EditBooking({booking, setShowModal}){
     const dispatch = useDispatch();
     const history = useHistory();
 
-    // console.log("booking", booking)
-
     const sessionUser = useSelector(state => state.session.user);
     const [bookingId, setBookingId] = useState('');
     const [userId, setUserId] = useState('');
@@ -70,7 +68,6 @@ function EditBooking({booking, setShowModal}){
     }, [dispatch])
 
     const filteredBookings = bookings.filter(booking => booking.userId === sessionUser.id);
-    console.log(filteredBookings)
 
     return (
         <div className="updateMyBooking">

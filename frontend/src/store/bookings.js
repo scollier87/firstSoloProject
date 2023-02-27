@@ -75,7 +75,6 @@ const initialState = {};
 const bookingsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_BOOKINGS:
-            console.log(action.bookings)
             return { ...state, ...Object.fromEntries(action.bookings.map((booking) => [
                 booking.id, booking])) };
 

@@ -22,7 +22,6 @@ function Home() {
     //     <ProfileButton user={sessionUser} />
     //   );
 
-    // console.log(spots)
 
     useEffect(() => {
         dispatch(getImages());
@@ -32,8 +31,6 @@ function Home() {
 
     const filteredSpots = spots.filter(spot => spot.userId === sessionUser?.id);
     const filteredBookings = bookings.filter(booking => booking.userId === sessionUser?.id)
-    console.log(filteredBookings)
-
     // useEffect(() => {
     //     dispatch(getOneSpot());
     // }, [dispatch]);

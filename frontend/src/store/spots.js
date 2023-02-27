@@ -111,7 +111,6 @@ const spotsReducer = ( state = initialState, action) => {
             // const newState = { ...state };
             // delete newState[action.spotId];
             delete state[action.spotId]
-            // console.log(action.spotId)
             return { ...state };
 
         }

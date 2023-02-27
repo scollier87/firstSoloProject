@@ -18,7 +18,6 @@ function Bookings() {
     const images = useSelector((state) => Object.values(state.images));
 
     const { id } = useParams() //method using a .find comparing the two ids useParams id ===
-    // console.log("spots", spots)
 
     const individualSpot = spots.find((spot) => {
         return +id === spot.id
@@ -57,13 +56,9 @@ function Bookings() {
                 history.push(`/home`)
             }
     }
-    // console.log(oneImage)
-    // console.log("images", images)
     // const citySpot = spots.find((spot) => {
     //     return +city === spot.city
     // })
-    // console.log(individualSpot)
-    // console.log("spots", spots)
 
     useEffect(() => {
         dispatch(getSpots());
